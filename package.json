@@ -35,6 +35,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource-variable/quicksand": "^5.0.16",
-		"@picocss/pico": "^2.0.0-rc3"
+		"@picocss/pico": "^2.0.0-rc3",
+		"svelte-markdown": "^0.4.1"
 	}
 }
