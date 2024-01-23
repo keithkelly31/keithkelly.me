@@ -1,3 +1,7 @@
+<script>
+	import { PUBLIC_SUBJECT } from '$env/static/public';
+</script>
+
 <h1>Hello</h1>
 
 <p>
@@ -7,4 +11,4 @@
 	>.
 </p>
 
-<p>This community isn't about me, we are focused solely on intentional living.</p>
+<p>This community isn't about me, we are focused solely on {PUBLIC_SUBJECT}.</p>
