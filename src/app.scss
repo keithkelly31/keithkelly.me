@@ -1,0 +1,9 @@
+@use "@picocss/pico/scss/pico.scss" with (
+  $semantic-root-element: "#root",
+  $enable-semantic-container: true
+);
+
+:root {
+  --pico-font-family: "Quicksand Variable",
+    var(--pico-font-family-sans-serif);
+}
