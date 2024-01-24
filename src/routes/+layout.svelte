@@ -7,7 +7,7 @@
 
 	export let data;
 
-	let { supabase, session } = data;
+	let { config, supabase, session } = data;
 	$: ({ supabase, session } = data);
 
 	onMount(() => {
@@ -23,13 +23,13 @@
 
 <header>
 	<nav>
-		<!-- <ul>
+		<ul>
 			<li>
-				<a href="/">{PUBLIC_NAME}</a>
+				<a href="/">{config.name}</a>
 			</li>
 		</ul>
 
-		<ul>
+		<!--  <ul>
 			{#if PUBLIC_BLOG === 'true'}
 				<li>
 					<a href="/blog">Blog</a>

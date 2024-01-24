@@ -1,5 +1,7 @@
 <script>
-	import { PUBLIC_SUBJECT } from '$env/static/public';
+	export let data;
+
+	const { config } = data;
 </script>
 
 <h1>Hello</h1>
@@ -11,4 +13,4 @@
 	>.
 </p>
 
-<p>This community isn't about me, we are focused solely on {PUBLIC_SUBJECT}.</p>
+<p>This community isn't about me, we are focused solely on {config.subject}.</p>

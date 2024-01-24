@@ -1,9 +1,8 @@
 @use "@picocss/pico/scss/pico" with (
   $semantic-root-element: "#root",
-  $enable-semantic-container: true
+  $enable-semantic-container: true,
+  $theme-color: "pumpkin"
 );
-
-@use "./lib/themes/pumpkin";
 
 :root {
   --pico-font-family: "Quicksand Variable",
