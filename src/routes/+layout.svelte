@@ -1,5 +1,4 @@
 <script>
-	import '@fontsource-variable/quicksand';
 	import '../app.scss';
 
 	import { invalidate } from '$app/navigation';
@@ -7,8 +6,8 @@
 
 	export let data;
 
-	let { config, supabase, session } = data;
-	$: ({ supabase, session } = data);
+	let { admin, supabase, session } = data;
+	$: ({ admin, supabase, session } = data);
 
 	onMount(() => {
 		const { data } = supabase.auth.onAuthStateChange((event, _session) => {
@@ -25,29 +24,24 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="/">{config.name}</a>
+				<strong><a href="/">keithkelly.me</a></strong>
 			</li>
 		</ul>
 
-		<!--  <ul>
-			{#if PUBLIC_BLOG === 'true'}
+		<ul>
+			{#if session}
+				{#if admin}
+					<li>
+						<a href="/writing">Writing</a>
+					</li>
+				{/if}
 				<li>
-					<a href="/blog">Blog</a>
+					<a href="/signout">Sign Out</a>
 				</li>
+			{:else}
+				<li><a href="/signin">Sign In</a></li>
 			{/if}
-
-			{#if PUBLIC_STORIES === 'true'}
-				<li>
-					<a href="/stories">Stories</a>
-				</li>
-			{/if}
-
-			{#if PUBLIC_QUESTIONS === 'true'}
-				<li>
-					<a href="/questions">Questions</a>
-				</li>
-			{/if}
-		</ul> -->
+		</ul>
 	</nav>
 </header>
 
@@ -55,9 +49,8 @@
 	<slot />
 </main>
 
-<!-- <style>
-	nav > ul:first-of-type > li {
+<style>
+	strong {
 		font-size: calc(var(--pico-font-size) * 1.25);
-		font-weight: 700;
 	}
-</style> -->
+</style>

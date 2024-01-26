@@ -1,16 +1,20 @@
 <script>
-	export let data;
+	import PostSummary from '$lib/components/post-summary.svelte';
 
-	const { config } = data;
+	/** @type { import("./$types").PageData } */
+	export let data;
+	let { posts } = data;
 </script>
+
+<svelte:head>
+	<title>Keith Kelly</title>
+	<meta name="description" content="This is a description" />
+</svelte:head>
 
 <h1>Hello</h1>
 
-<p>
-	I am happy that you are here today. My name is Keith Kelly and I am the founder of this community.
-	If you would like to know more about me you can jump over to my blog at <a
-		href="https://keithkelly.me">keithkelly.me</a
-	>.
-</p>
-
-<p>This community isn't about me, we are focused solely on {config.subject}.</p>
+{#each posts as post}
+	<PostSummary {post} />
+{:else}
+	<article>There are no posts to see</article>
+{/each}
