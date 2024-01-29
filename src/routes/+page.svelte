@@ -1,4 +1,5 @@
 <script>
+	import Grid from '$lib/components/grid.svelte';
 	import PostSummary from '$lib/components/post-summary.svelte';
 
 	/** @type { import("./$types").PageData } */
@@ -13,8 +14,10 @@
 
 <h1>Hello</h1>
 
-{#each posts as post}
-	<PostSummary {post} />
-{:else}
-	<article>There are no posts to see</article>
-{/each}
+<Grid>
+	{#each posts as post}
+		<PostSummary {post} />
+	{:else}
+		<article>There are no posts to see</article>
+	{/each}
+</Grid>
