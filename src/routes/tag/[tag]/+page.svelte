@@ -1,12 +1,14 @@
 <script>
 	import BreadCrumbs from '$lib/components/bread-crumbs.svelte';
+	import Grid from '$lib/components/grid.svelte';
 	import PostSummary from '$lib/components/post-summary.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 	let { posts, tag } = data;
+	$: ({ posts, tag } = data);
 
-	tag = tag.replaceAll('-', ' ');
+	$: tag = tag.replaceAll('-', ' ');
 </script>
 
 <svelte:head>
@@ -18,11 +20,13 @@
 
 <BreadCrumbs steps={[]} />
 
-{#each posts as post}
-	<PostSummary {post} />
-{:else}
-	<article>No posts under this tag</article>
-{/each}
+<Grid>
+	{#each posts as post}
+		<PostSummary {post} />
+	{:else}
+		<article>No posts under this tag</article>
+	{/each}
+</Grid>
 
 <style>
 	h1 {

@@ -1,4 +1,5 @@
 <script>
+	import '@fontsource-variable/quicksand';
 	import '../app.scss';
 
 	import { invalidate } from '$app/navigation';

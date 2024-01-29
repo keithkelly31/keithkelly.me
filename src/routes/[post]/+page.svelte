@@ -13,23 +13,25 @@
 	<meta name="description" content={post.description} />
 </svelte:head>
 
-<BreadCrumbs steps={[]} />
+<div class="prose">
+	<BreadCrumbs steps={[]} />
 
-<hgroup>
-	<h1>{post.title}</h1>
-	<h2>{format(new Date(post.last_edit), 'LLL dd yyyy')}</h2>
-</hgroup>
+	<hgroup>
+		<h1>{post.title}</h1>
+		<h2>{format(new Date(post.last_edit), 'LLL dd yyyy')}</h2>
+	</hgroup>
 
-<section>
-	<SvelteMarkdown source={post.markdown} />
-</section>
+	<section>
+		<SvelteMarkdown source={post.markdown} />
+	</section>
 
-<!-- <hr />
+	<!-- <hr />
 
-<h3>Conversation</h3>
+	<h3>Conversation</h3>
 
-{#if session}
-	<p>Here is where some stuff will go</p>
-{:else}
-	<article>Join</article>
-{/if} -->
+	{#if session}
+		<p>Here is where some stuff will go</p>
+	{:else}
+		<article>Join</article>
+	{/if} -->
+</div>
