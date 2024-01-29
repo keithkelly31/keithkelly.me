@@ -29,12 +29,17 @@
 		</ul>
 
 		<ul>
+			{#if admin}
+				<li>
+					<a href="/writing">Writing</a>
+				</li>
+			{/if}
+
+			<!-- <li>
+				<a href="/projects">Projects</a>
+			</li> -->
+
 			{#if session}
-				{#if admin}
-					<li>
-						<a href="/writing">Writing</a>
-					</li>
-				{/if}
 				<li>
 					<a href="/signout">Sign Out</a>
 				</li>
@@ -49,7 +54,41 @@
 	<slot />
 </main>
 
+<!-- <footer>
+	<nav>
+		<ul>
+			<li>
+				<a href="/contact">Contact</a>
+			</li>
+		</ul>
+	</nav>
+	<nav>
+		<ul>
+			<li>Projects:</li>
+			<li>
+				<a href="https://coloringcub.com">Coloring Cub</a>
+			</li>
+			<li>
+				<a href="https://keithkelly.dev">keithkelly.dev</a>
+			</li>
+			<li>
+				<a href="https://simplelinup.com">Simple Lineup</a>
+			</li>
+		</ul>
+	</nav>
+</footer> -->
+
 <style>
+	:global(body) {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	main {
+		flex: 1;
+	}
+
 	strong {
 		font-size: calc(var(--pico-font-size) * 1.25);
 	}

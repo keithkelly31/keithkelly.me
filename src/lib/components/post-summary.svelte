@@ -32,16 +32,23 @@
 	{/if}
 
 	<style>
-		article > p {
+		article {
+			display: flex;
+			flex-direction: column;
+		}
+
+		footer {
+			display: flex;
+			gap: var(--pico-spacing);
+			flex-wrap: wrap;
+		}
+
+		p {
 			display: -webkit-box;
+			flex: 1;
 			-webkit-line-clamp: 3;
 			-webkit-box-orient: vertical;
 			overflow: hidden;
-		}
-
-		article > footer {
-			display: flex;
-			gap: var(--pico-spacing);
 		}
 	</style>
 </article>
