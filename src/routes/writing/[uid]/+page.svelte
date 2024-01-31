@@ -51,38 +51,40 @@
 
 <hr />
 
-{#if editing}
-	<Form {form} reset={false} let:busy>
-		<fieldset>
-			<label for="title">Title</label>
-			<input bind:value={title} type="text" name="title" id="title" />
-		</fieldset>
+<div class="prose">
+	{#if editing}
+		<Form {form} reset={false} let:busy>
+			<fieldset>
+				<label for="title">Title</label>
+				<input bind:value={title} type="text" name="title" id="title" />
+			</fieldset>
 
-		<fieldset>
-			<label for="description">Description</label>
-			<Textarea bind:value={description} name="description" />
-		</fieldset>
+			<fieldset>
+				<label for="description">Description</label>
+				<Textarea bind:value={description} name="description" />
+			</fieldset>
 
-		<fieldset>
-			<label for="markdown">Markdown</label>
-			<Textarea bind:value={source} min_rows={10} name="markdown" />
-		</fieldset>
+			<fieldset>
+				<label for="markdown">Markdown</label>
+				<Textarea bind:value={source} min_rows={10} name="markdown" />
+			</fieldset>
 
-		<fieldset>
-			<label for="tags">Tags</label>
-			<input bind:value={tags} type="text" name="tags" id="tags" />
-			<small>Separate tags with a comma</small>
-		</fieldset>
+			<fieldset>
+				<label for="tags">Tags</label>
+				<input bind:value={tags} type="text" name="tags" id="tags" />
+				<small>Separate tags with a comma</small>
+			</fieldset>
 
-		<fieldset>
-			<label>
-				<input bind:checked={published} name="published" type="checkbox" role="switch" />
-				Published
-			</label>
-		</fieldset>
+			<fieldset>
+				<label>
+					<input bind:checked={published} name="published" type="checkbox" role="switch" />
+					Published
+				</label>
+			</fieldset>
 
-		<button aria-busy={busy} type="submit">Save Post</button>
-	</Form>
-{:else}
-	<SvelteMarkdown {source} />
-{/if}
+			<button aria-busy={busy} type="submit">Save Post</button>
+		</Form>
+	{:else}
+		<SvelteMarkdown {source} />
+	{/if}
+</div>
