@@ -1,5 +1,5 @@
 <script>
-	import '@fontsource-variable/quicksand';
+	import '@fontsource-variable/nunito';
 	import '../app.scss';
 
 	import { invalidate } from '$app/navigation';
