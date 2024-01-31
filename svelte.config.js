@@ -6,7 +6,7 @@ const config = {
 		adapter: adapter(),
 		csp: {
 			directives: {
-				'script-src': ['self', 'unsafe-inline'],
+				'script-src': ['self', 'unsafe-inline', 'https://plausible.io/js/script.js'],
 				'object-src': ['none'],
 				'base-uri': ['self']
 			}
