@@ -1,5 +1,6 @@
 <script>
 	import { format } from 'date-fns';
+	import Tags from './tags.svelte';
 
 	/**
 	 * @typedef { Object } Post
@@ -24,10 +25,7 @@
 
 	{#if post.tags}
 		<footer>
-			<span>Tags:</span>
-			{#each post.tags.split(',') as tag, i}
-				<a href="/tag/{tag.trim().toLowerCase().replaceAll(' ', '-')}">{tag}</a>
-			{/each}
+			<Tags tags={post.tags} />
 		</footer>
 	{/if}
 

@@ -1,5 +1,6 @@
 <script>
 	import BreadCrumbs from '$lib/components/bread-crumbs.svelte';
+	import Tags from '$lib/components/tags.svelte';
 	import { format } from 'date-fns';
 	import SvelteMarkdown from 'svelte-markdown';
 
@@ -24,6 +25,8 @@
 	<section>
 		<SvelteMarkdown source={post.markdown} />
 	</section>
+
+	<Tags tags={post.tags} />
 
 	<!-- <hr />
 
